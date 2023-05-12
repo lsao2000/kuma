@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background: rgba(26, 21, 14, 0.284);
+}
+.brand{
+    margin-top:150px;
+    color: blueviolet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.brandescription p{
+    color: blueviolet;
+    font-weight: bold;
+}
+.brandescription span{
+    font-weight: 100;
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.btn1{
+    border:none;
+    /* background: linear-gradient(); */
+    padding: 6px;
+    border-radius: 6px;
+    background: blueviolet;
+    color: white;
+}
+#card{
+    transition: 0.6s;
+    border: 2px solid blueviolet;
+}
+.error {
+    color: red;
+}
