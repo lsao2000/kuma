@@ -4,11 +4,20 @@ if (!isset($_SESSION['username'])){
     header("location:index.php");
     die();
 }else{
-    
+    include("connectdb.php");
+    include("function.php");
+    $username = selectDatabase($conx,'username',$_SESSION['username'],'users');
+    $name_img = selectDatabase($conx,"profile_picture",$username,'users');
+    $tmpName = selectDatabase($conx,"tmp_name",$username,'users');
+    if ($tmpName === "" || $tmpName == NULL){
+    $src = "imgdb/".selectDatabase($conx,'profile_picture',$username,'users');
+    }else{
+        $src = "imgdb/$username/profile/$name_img";
+    }
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,17 +32,16 @@ if (!isset($_SESSION['username'])){
             <h1 class="brand">Kuma</h1>
         </div>
         <div class="toggle" id="toggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <img src="<?=$src?>" id="profile" alt="">
         </div>
         
     </nav>
     <div class="navbar-left" id="navbarleft">
         <ul>
-            <li><a href="">Home</a></li>
+            <li><a href="editProfile.php">profile</a></li>
             <li><a href="">Group</a></li>
             <li><a href="">Parameter</a></li>
+            <li><a href="">freind</a></li>
             <li><a href="logout.php">logout</a></li>
         </ul>
     </div>

@@ -35,5 +35,11 @@ function insertIntoDatabase($conx,$var1,$var2,$var3,$var4,$var5,$var6){
     $quiring->execute(array($var1,$var2,$var3,$var4,$var5,$var6));
 }
 
-
+// using this function to select data from database
+function selectDatabase($conx,$column,$username,$table){
+    $preparing = $conx->prepare("SELECT $column FROM $table WHERE username = ?");
+    $preparing->execute(array($username));
+    $line = $preparing->fetch();
+    return $line["$column"];
+}
 ?>
