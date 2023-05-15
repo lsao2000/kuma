@@ -15,14 +15,13 @@ body{
 .navbar-left{
     display: flex;
     float: right;
-    padding: 50px 10px;
-    z-index: 1000;
-    position: static;
-    transition: 1.1s;
-    display: none;
-    height: 100%;
+    padding: 20px 10px;
+    transition: 0.4s;
     
     
+}
+a{
+    text-decoration: none;
 }
 #profile{
     width: 40px;

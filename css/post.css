@@ -1,0 +1,52 @@
+.divFile{
+    position: absolute;
+    float: right;
+    margin-left: 84%;
+}
+.publish{
+    border: 1px solid blueviolet;
+    padding: 7px;
+}
+#text{
+    width: 85%;
+}
+#file{
+    width: 30px;
+    height: 29px;
+    margin-top: -29px;
+    opacity: 0;
+}
+#btnPublish{
+    background: blueviolet;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 6px 9px;    
+}
+#btnPublish:hover{
+    background: rgb(150, 58, 237);
+    color: white;
+}
+#imageIcon{
+    /* display: flex; */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    justify-self: right;
+}
+
+.divHeadPost{
+    display: flex;
+    justify-content: space-between;
+}
+.divFooterPost{
+    display: flex;
+    justify-content: space-between;
+}
+.divFooterPost>button{
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+}
+.card{
+    border-radius: 20px;
+}

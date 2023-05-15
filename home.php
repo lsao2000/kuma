@@ -23,28 +23,13 @@ if (!isset($_SESSION['username'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./boot/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/profile.css">
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <title>Profile</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark">
-        <div>
-            <h1 class="brand">Kuma</h1>
-        </div>
-        <div class="toggle" id="toggle">
-            <img src="<?=$src?>" id="profile" alt="">
-        </div>
-        
-    </nav>
-    <div class="navbar-left" id="navbarleft">
-        <ul>
-            <li><a href="editProfile.php">profile</a></li>
-            <li><a href="">Group</a></li>
-            <li><a href="">Parameter</a></li>
-            <li><a href="">freind</a></li>
-            <li><a href="logout.php">logout</a></li>
-        </ul>
-    </div>
-    <script src="./js/profile.js"></script>
+    <?php include("navbar.php")?>
+    <script src="./js/navbar.js"></script>
+    <script src="./js/home.js"></script>
 </body>
 </html>

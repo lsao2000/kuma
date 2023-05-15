@@ -5,10 +5,10 @@ if (isset($_SESSION['username'])){
         include("connectdb.php");
         include("function.php");
         insertIntoDatabase($conx,$_SESSION['firstname'],$_SESSION['lastname'],$_SESSION['username'],$_SESSION['phone'],$_SESSION['email'],$_SESSION['pwd']);
-        header("Location:profile.php");
+        header("Location:home.php");
         die();
     }catch(PDOException){
-        header("Location:profile.php");
+        header("Location:home.php");
         die();
     }
 }else{

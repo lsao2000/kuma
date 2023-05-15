@@ -23,10 +23,14 @@ if(!isset($_SESSION['username'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="boot/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/navbar.css">
     <link rel="stylesheet" href="css/editProfile.css">
     <title>Profile</title>
 </head>
 <body>
+    <?php include("navbar.php")?>
+    <br>
+    <br>
     <div class="card w-50 mx-auto mt-5">
         <form action="chekEditProfile.php" method="post" enctype="multipart/form-data">
             <div class="row mt-4 ">
@@ -44,6 +48,7 @@ if(!isset($_SESSION['username'])){
             </div>
         </form>    
     </div>
+    <script src="./js/navbar.js"></script>
 </body>
 </html>
 <?php

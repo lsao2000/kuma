@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username'])){
-    header("location:profile.php");
+    header("location:home.php");
     die();
 }else{ 
     include("connectdb.php");
@@ -98,7 +98,7 @@ if (isset($_SESSION['username'])){
     if($pwdValid === "valid" && $usernameValid === "valid"){
         $_SESSION['pwd'] = $pwd;
         $_SESSION['username'] = $username;
-        header("Location:profile.php");
+        header("Location:home.php");
         die();
     }
     ?>

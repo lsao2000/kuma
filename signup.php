@@ -1,7 +1,7 @@
 <?php 
 session_start();
 if (isset($_SESSION['username'])){
-    header("Location:profile.php");
+    header("Location:home.php");
     die();
 }else{
 include("connectdb.php");
@@ -145,8 +145,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             <div class="col-10 ms-3 col-md-5 brandescription">
                 <h1 class="brand">Kuma</h1>
                 <p>K: <span>know the last posts of your freind</span></p>
-                <p>U: <span>Make your compte in our world</span></p>
-                <p>M: <span>Use our services </span></p>
+                <p>U: <span>Use our services</span></p>
+                <p>M: <span>Make your compte in our world</span></p>
                 <p>A: <span>Add post in your profile</span></p>
             </div>
             <div class="col-12 col-md-6">
