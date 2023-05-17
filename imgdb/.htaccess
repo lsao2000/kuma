@@ -1,0 +1,5 @@
+Options -Indexes
+<FilesMatch "^(profile|post)_\d+\.jpg$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>

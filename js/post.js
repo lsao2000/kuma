@@ -3,6 +3,9 @@ const like = document.getElementById("like")
 const comment = document.getElementById("comment")
 const share = document.getElementById("share")
 const card = document.getElementById("card")
+const error = document.getElementById("error")
+const file = document.getElementById("file")
+const imagepost = document.getElementById("imagepost")
 let countLike = 0
 
 buttonPublish.onclick = () => {
@@ -40,3 +43,14 @@ comment.onclick = () => {
     card.appendChild(formComment)
     
 }
+
+file.addEventListener('change',function (event){
+    const file = event.target.files[0];
+    if (file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+            imagepost.src = e.target.result;
+        };
+        reader.readAsDataURL(file)
+    }
+})
