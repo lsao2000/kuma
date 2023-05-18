@@ -1,0 +1,12 @@
+#titelCopyright,#textCopyright{
+    text-align: center;
+}
+footer{
+    position: relative;
+    margin-bottom: 0;
+    background: blueviolet;
+    padding: 20px;
+}
+#founder{
+    font-family: 'Lucida Sans';
+} 

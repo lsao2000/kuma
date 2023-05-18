@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+#divBrand>h1>a{
+    color: blueviolet;
+}
+
+.nav-ul{
+    list-style: none;
+    display: inline-flex;
+    padding: 7px 0;
+}
+.nav-ul>li{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+}
+#cardImage{
+    height: 200px;
+}
+#card1{
+    opacity: 0;
+    transition: 4.6s;
+}
+strong{
+    color: blueviolet;
+}
