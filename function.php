@@ -29,10 +29,10 @@ function displayInInput($variable,$idInput,$validInput){
 }
 
 // using this function to insert data in our database
-function insertIntoDatabase($conx,$var1,$var2,$var3,$var4,$var5,$var6){
-    $quiring = $conx->prepare("INSERT INTO users(firstname,lastname,username,phone,email,password)
-                                VALUES(?,?,?,?,?,?)");
-    $quiring->execute(array($var1,$var2,$var3,$var4,$var5,$var6));
+function insertIntoDatabase($conx,$var1,$var2,$var3,$var4,$var5,$var6,$var7){
+    $quiring = $conx->prepare("INSERT INTO users(firstname,lastname,username,phone,email,password,profile_picture)
+                                VALUES(?,?,?,?,?,?,?)");
+    $quiring->execute(array($var1,$var2,$var3,$var4,$var5,$var6,$var7));
 }
 
 // using this function to select data from database

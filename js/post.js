@@ -8,6 +8,16 @@ const file = document.getElementById("file")
 const imagepost = document.getElementById("imagepost")
 let countLike = 0
 
+file.addEventListener('change',function (event){
+    const file = event.target.files[0];
+    if (file){
+        const reader = new FileReader();
+        reader.onload = function(e){
+            imagepost.src = e.target.result;
+        };
+        reader.readAsDataURL(file)
+    }
+})
 buttonPublish.onclick = () => {
     buttonPublish.style.background = "rgb(150, 58, 237)"
     buttonPublish.style.color = "white"
@@ -43,14 +53,3 @@ comment.onclick = () => {
     card.appendChild(formComment)
     
 }
-
-file.addEventListener('change',function (event){
-    const file = event.target.files[0];
-    if (file){
-        const reader = new FileReader();
-        reader.onload = function(e){
-            imagepost.src = e.target.result;
-        };
-        reader.readAsDataURL(file)
-    }
-})
