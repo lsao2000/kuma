@@ -39,7 +39,7 @@ if (!isset($_SESSION['username'])){
             <div class="col-8 col-md-8">
                 <div class="card publish mt-5 mb-4">
                     <form action="registrationPost.php" method="post" enctype="multipart/form-data">
-                        <p id="error" class="ms-3"><?=$_SESSION['msg']?></p>
+                        <p id="error" class="ms-3"><?php if(isset($_SESSION['msg'])){echo $_SESSION['msg'];}?></p>
                         <img src="" class="w-100 mt-2 mb-2 rounded rounded-3" id="imagepost" alt="">
                         <div class="mt-1 d-flex" id="divFatherPost">
                             <input class="form-control" type="text" name="textpost" id="text">

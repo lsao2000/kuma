@@ -25,13 +25,75 @@ nav{
 a{
     text-decoration: none;
 }
-#cardImage{
-    height: 200px;
-}
-#card1{
-    opacity: 0;
-    transition: 4.6s;
-}
 strong{
     color: blueviolet;
 }
+
+#imageCard{
+    border-radius: 20px;
+    border: 1px solid blueviolet;
+}
+.div1{
+    background: url(../imageAnimation/kuma.JPG);
+    background-size: cover;
+    height: 350px;
+}
+.div2{
+    background: url(../imageAnimation/kuma.JPG);
+    background-size: cover;
+    height: 350px;
+}
+.div3{
+    background: url(../imageAnimation/kumasignup.JPG);
+    background-size: 600px;
+    height: 350px;
+}
+.div4{
+    background: url(../imageAnimation/kuma.JPG);
+    background-size: 350px;
+    height: 350px;
+}
+.div5{
+    background: url(../imageAnimation/kuma.JPG);
+    background-size: 350px;
+    height: 350px;
+
+}
+
+#card1{
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+#card2{
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+#card3{
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+#card4{
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+#card5{
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+
+
+
+  
+
