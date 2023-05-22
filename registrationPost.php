@@ -2,11 +2,12 @@
 session_start();
 include("function.php");
 include("connectdb.php");
+echo "<script src='./js/post.js'></script>";
 $textpost = validInput($_POST['textpost']);
 $username = selectDatabase($conx,'username',$_SESSION['username'],'users');
 $id = selectDatabase($conx,'id',$username,'users');
 if (empty($textpost) && empty($_FILES['imagepost']['name'])){
-    $_SESSION['msg'] = "<script> alert('add an image or text to post')</script>";
+    $_SESSION['msg'] = 'add an image or text to post';
 }
 if (empty($_FILES['imagepost']['name']) ){
     $imagepostName = "";

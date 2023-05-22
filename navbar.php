@@ -2,28 +2,64 @@
 
 
 ?>
-
-<nav class="navbar bg-light navbar-dark fixed-top">
-        <div>
-            <h1><a href="home.php" class="brand">Kuma</a></h1>
+<div class="sidebar">
+    <ul>
+        <li class="logo">
+            <a href="home.php">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="text">Kuma</span>
+            </a>
+        </li>
+        <li>
+            <a href="editProfile.php">
+                <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                <span class="text">Profile</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
+                <span class="text">Group</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                <span class="text">Parameter</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                <span class="text">Freind</span>
+            </a>
+        </li>
+        <li>
+            <a href="post.php">
+                <span class="icon"><ion-icon name="duplicate-outline"></ion-icon></span>
+                <span class="text">Post</span>
+            </a>
+        </li>
+        <div class="bottom">
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <div class="image">
+                            <img src="<?=$src?>" alt="">
+                        </div>
+                    </span>
+                    <span class="text"><?=$username?></span>
+                </a>
+            </li>
+            <li>
+                <a href="logout.php">
+                    <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class="text">Logout</span>
+                </a>
+            </li>
         </div>
-        <div class="toggle" id="toggle" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <img src="<?=$src?>" id="profile" alt="">
-        </div>
-</nav>
-    <div class="offcanvas offcanvas-end navbar-left  px-0 w-25" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" >
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <ul>
-            <li><a href="editProfile.php">profile</a></li>
-            <li><a href="">Group</a></li>
-            <li><a href="">Parameter</a></li>
-            <li><a href="">freind</a></li>
-            <li><a href="post.php">post</a></li>
-            <li><a href="logout.php">logout</a></li>
-        </ul>
-    </div>
-<script src="./boot/js/bootstrap.bundle.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
+            
+    </ul>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

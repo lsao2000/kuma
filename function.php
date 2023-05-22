@@ -42,4 +42,10 @@ function selectDatabase($conx,$column,$username,$table){
     $line = $preparing->fetch();
     return $line["$column"];
 }
+function selectByidDatabase($conx,$column,$id,$table){
+    $preparing = $conx->prepare("SELECT $column FROM $table WHERE id = ?");
+    $preparing->execute(array($id));
+    $line = $preparing->fetch();
+    return $line["$column"];
+}
 ?>

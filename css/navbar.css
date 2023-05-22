@@ -1,51 +1,96 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 body{
-    filter: drop-shadow(0.2);
-    margin: 0;
+    min-height: 100vh;
 }
-.navbar{
-    justify-content: space-between;
-    display: flex;
+.sidebar{
     position: fixed;
+    width: 60px;
+    height: 100vh;
+    background: white;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 1000;
+    border-right: 1px solid blueviolet;
+    
 }
-.brand{
-    color: blueviolet;
-    margin-left: 20px;
+.sidebar:hover{
+    width: 200px;
 }
-.navbar-left{
+.sidebar ul{
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+.sidebar ul li{
+    list-style: none;
+}
+.sidebar ul li:hover{
+    background: #f3f3f3;
+}
+.sidebar ul li a{
+    position: relative;
     display: flex;
-    float: right;
-    padding: 20px 10px;
-    transition: 0.4s;
-    
-    
-}
-a{
+    white-space: nowrap;
     text-decoration: none;
 }
-#profile{
+.sidebar ul li a .icon{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    color: #333;
+}
+.sidebar ul li a .text{
+    position: relative;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.sidebar ul li.logo{
+    margin-bottom: 50px;
+
+}
+.sidebar ul li.logo:hover{
+    background: #fff;
+}
+.sidebar ul  li.logo .icon{
+    font-size: 2em;
+}
+.sidebar ul li.logo .text{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: blueviolet;
+}
+.bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.bottom .image{
+    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    overflow: hidden;
 }
-.navbar-left ul{
-    list-style-type: none;
-    margin-right: 30px;
-}
-.navbar-left>ul>li{
-    margin-right: 5px;
-    margin-top: 20px;
-}
-.navbar-left>ul>li>a{
-    text-decoration: none;
-}
-.toggle{
-    margin: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-right: 20px;
-    cursor: pointer;
+.bottom .image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

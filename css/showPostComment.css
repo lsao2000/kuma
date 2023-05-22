@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.post{
+    position: relative;
+    display: flex;
+    top: 10px;
+}
+#cardPost{
+    border: 1px solid blueviolet;
+    overflow-y: auto;
+    height: 500px;
+    border-radius: 13px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+}
+#comment{
+    position: relative;
+    right: 10px;
+    top: 0;
+    display: flex;
+}
+#comment img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    left: 0;
+}
+#comment div{
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    border-radius: 18px;
+    border-top-left-radius: 5px;
+    margin-left: 40px;
+}
+.paragraph::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left:22px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #f3f3f3 transparent transparent ;
+}
+p{
+    padding: 0 8px;
+}
+#date{
+    font-size: 10px;
+    color: gray;
+    margin-left: 60%;
+}
+.formComment{
+    display: flex;
+    margin-top: 9px;
+    padding: 8px 0;
+    border-left: 1px solid blueviolet;
+    border-bottom: 1px solid blueviolet;
+    border-right: 1px solid blueviolet;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+#iconSubmit{
+    position: absolute;
+    font-size: 32px;
+    margin-left: 2px;
+}
+.submitComment{
+    width: 32px;
+    height: 32px;
+    margin-left: 2px;
+    opacity: 0;
+}
+#PostID{
+    display: none;
+}

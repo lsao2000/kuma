@@ -4,17 +4,7 @@ if (!isset($_SESSION['username'])){
     header('location:index.php');
     die();
 }else{
-    include("connectdb.php");
-    include("function.php");
-    $username = selectDatabase($conx,'username',$_SESSION['username'],'users');
-    $id = selectDatabase($conx,'id',$username,'users');
-    $name_img = selectDatabase($conx,"profile_picture",$username,'users');
-    $tmpName = selectDatabase($conx,"tmp_name",$username,'users');
-    if ($tmpName === "" || $tmpName == NULL){
-        $src = "imgdb/default/".selectDatabase($conx,'profile_picture',$username,'users');
-    }else{
-        $src = "imgdb/$username/profile/$name_img";
-    }
+    include("chckSession.php");
     
 ?>
 <!DOCTYPE html>
@@ -39,7 +29,7 @@ if (!isset($_SESSION['username'])){
             <div class="col-8 col-md-8">
                 <div class="card publish mt-5 mb-4">
                     <form action="registrationPost.php" method="post" enctype="multipart/form-data">
-                        <p id="error" class="ms-3"><?php if(isset($_SESSION['msg'])){echo $_SESSION['msg'];}?></p>
+                        <p id="error" class="ms-3"></p>
                         <img src="" class="w-100 mt-2 mb-2 rounded rounded-3" id="imagepost" alt="">
                         <div class="mt-1 d-flex" id="divFatherPost">
                             <input class="form-control" type="text" name="textpost" id="text">
@@ -65,15 +55,29 @@ if (!isset($_SESSION['username'])){
                             </div>
                             <h6 class="ms-2" id="textPost"><?=$line['text_post'];?></h6>
                             <img src="imgdb/<?="$username/post/".$line['name_img']?>" class="col-12" alt="">
+                            <hr>
                             <div class="divFooterPost p-1">
-                                <button><img src="./imageAnimation/heartnoclick.png" id="like" alt=""></button>
-                                <button ><img src="./imageAnimation/comment.png" id="comment" alt=""></button>
-                                <button ><img src="./imageAnimation/share.png" id="share" alt=""></button>
+                                <button><img src="./imageAnimation/heartnoclick.png" width="30" class="like" id="like" alt=""></button>
+                                <form action="showPostComment.php" method="post">
+                                    <input type="text" name="PostId" class="commentsPost" value="<?= $line['id']?>">
+                                    <input type="submit" value="" id="comment">
+                                </form>
+                                <button><img src="./imageAnimation/share.png" id="share" alt=""></button>
                             </div>
+                            <form action="registrationComment.php" method="post" class="formComment">
+                                <input type="text" name="Postid" id="PostID" value="<?=$line['id']?>">
+                                <input type="text" name="textComment" class="form-control">
+                                <span>
+                                    <ion-icon name="send-outline" id="iconSubmit"></ion-icon>
+                                    <input type="submit" value=""  name="commentSubmit" class="submitComment">
+                                </span>
+                            </form>
                         </div>
-
                     <?php 
-                        }; 
+                        };
+                        if (isset($_SESSION['msg'])){
+                            echo "<script>error.textContent =  '$_SESSION[msg]' </script>";
+                        }
                     ?>
             </div>
             <div class="col-2 col-md-2"></div>
@@ -84,6 +88,5 @@ if (!isset($_SESSION['username'])){
 </body>
 </html>
 <?php 
-
 }
 ?>

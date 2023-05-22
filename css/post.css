@@ -44,9 +44,54 @@
     justify-content: space-between;
 }
 .divFooterPost>button{
-    border: 1px solid blueviolet;
-    border-radius: 10px;
+    border: none;
+    background: transparent;
 }
 .card{
     border-radius: 20px;
+}
+.formComment{
+    margin-left: 7%;
+    margin-right: auto;
+    display: flex;
+    width: 80%;
+    margin-top: 6px;
+    margin-bottom: 4px;
+}
+.inputComment{
+    position: relative;
+    width: 100%;
+}
+.submitComment{
+    width: 22px;
+    position: absolute;
+    border: none;
+    opacity: 0;
+    margin-top: 5px;
+    margin-left: 5px;
+    color: black;
+    display: flex;
+}
+#PostID{
+    display: none;
+}
+#error{
+    color: red;
+}
+#comment{
+    background: url(../imageAnimation/comment.png) no-repeat;
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 2px;
+}
+#iconSubmit{
+    margin-top: 5px;
+    font-size: 22px;
+    display: flex;
+    position: absolute;
+    margin-left: 5px;
+}
+.commentsPost{
+    display: none;
 }
