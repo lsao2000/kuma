@@ -49,7 +49,7 @@ if (!isset($_SESSION['username'])) {
                 </div>
                 <div class="row">
                     <div class="col-2 col-md-2"></div>
-                        <form action="registrationComment.php" method="post" class="col-9 col-md-7 formComment">
+                        <form action="RCIRP.php" method="post" class="col-9 col-md-7 formComment">
                             <input type="text" name="Postid" id="PostID" value="<?=$_SESSION['PostId']?>">
                             <input type="text" name="textComment" class="form-control">
                             <span>

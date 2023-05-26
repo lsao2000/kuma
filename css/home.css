@@ -1,1 +1,274 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.navHome{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    
+}
+.formComment{
+    display: flex;
+    height: 40px;
+    width: 80%;
+    margin-left:7%;
+    margin-right: auto;
+    margin-top: 9px;
+    margin-bottom: 5px;
+}
+.footerbtn{
+    display: flex;
+    justify-content: space-between;
+}
+.footerbtn>button{
+    border: none;
+    background: transparent;
+}
+#navbarHome{
+    border: 1px solid blueviolet;
+    /* position: fixed; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* z-index: 400; */
+    /* margin-top: 0; */
+    /* top: 4px; */
+    
+    /* margin-bottom: 80px; */
+}
+#homePost{
+    height: 34px;
+    width: 34px;
+    border: none;
+    margin-top: 4px;
+    background: url(../imageAnimation/blogclick.png) no-repeat;
+}
+#homeFreind{
+    height: 34px;
+    width: 34px;
+    border: none;
+    margin: 0 14%;
+    margin-top: 4px;
+    background: url(../imageAnimation/people.png) no-repeat;
+}
+#homeMessage{
+    height: 34px;
+    width: 34px;
+    border: none;
+    margin-top: 4px;
+    background: url(../imageAnimation/chat.png) no-repeat;
+}
+#imgProfilePosting{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#headerPost{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 5px;
+}
+#datepost{
+    margin-top: 5px;
+    font-size: 70%;
+}
+#textPost{
+    margin-left: 6px;
+}
+#imgPost{
+    width: 100%;
+}
+#footer{
+    padding-left: 14%;
+    width: 100%;
+    background: red;
+}
+#textComment{
+    position: relative;
+    width: 100%;
+}
+#iconSubmit{
+    font-size: 35px;
+    margin-left: 20px;
+    position: absolute;
+}
+#submitComment{
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    opacity: 0;
+}
+#postId{
+    display: none;
+}
+#comment{
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 6px;
+    background: url(../imageAnimation/comment.png) no-repeat;
+}
+#freind{
+    display: none;
+    border: 1px solid gainsboro;
+    margin-top: 20px;
+    padding: 4px 6%;
+    border-radius: 14px;
+    overflow-y: auto;
+    height: 400px;
+}
+#imgProfileFreind{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 8%;
+}
+#divFreind{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 5%;
+    border: 1px solid blueviolet;
+    border-radius: 10px;
+}
+#infoFreind{
+    display: flex;
+}
+#idFreind{
+    display: none;
+}
+#nameFreind{
+    margin-top: 8px;
+    margin-left: 10%;
+}
+#addFreind{
+    margin-top: 9px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: url(../imageAnimation/addFreind.png) no-repeat;
+}
+#removeFreind{
+    width: 32px;
+    height: 32px;
+    border: none;
+    margin-top: 9px;
+    background: url(../imageAnimation/removeFreind.png) no-repeat;
+}
+#divMessageParent{
+    display: none;
+}
+#message{
+    width: 100%;
+    overflow-x: auto;
+    position: relative;
+    border: 1px solid blueviolet;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 4px 3px;
+    display: flex;
+}
+#freindList{
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+#freindImg{
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+#showMessage{
+    width: 40px;
+    height: 40px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 6px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+}
+#IdFreind{
+    display: none;
+}
+#chatFreindImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+#chatFreind{
+    display: none;
+}
+#chatHeader{
+    height: 58px;
+    display: flex;
+    margin-bottom: 20px;
+}
+#nameChatFreind{
+    margin-top: 9px;
+    margin-left: 6px;
+    font-weight: bold;
+}
+#chatBody{
+    height: 350px;
+    overflow-y: auto;
+    transition: 0.5s;
+}
+#footerChat{
+    display: flex;
+}
+#sendername,#freindid,#senderId{
+    display: none;
+}
+#submitMessage{
+    height: 36px;
+    width: 36px;
+    border: none;
+    background: url(../imageAnimation/message.png) no-repeat;
+}
+#textmessage{
+    display: flex;
+    width: 100%;
+    margin-right: 6px;
+}
+#footerChat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
 
+#divSubmitMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 105%;
+}
+#sender{
+    padding: 3px 4px;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 9px;
+    width: 40%;
+    font-size: 80%;
+    min-height: 30px;
+    font-weight: bold;
+    margin-left: 60%;
+    background: rgb(233, 232, 232);
+}
+#receiver{
+    margin-left: 4px;
+    font-size: 80%;
+    font-weight: bold;
+    width: 50%;
+    background: rgb(233, 232, 232);
+    min-height: 30px;
+    padding: 3px 4px;
+    border-radius: 7px;
+    margin-top: 5px;
+    margin-bottom: 9px;
+}
+#checkIsFreind{
+    display: none;
+}

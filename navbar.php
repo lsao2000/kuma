@@ -23,13 +23,13 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="parameter.php">
                 <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                 <span class="text">Parameter</span>
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="freind.php">
                 <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
                 <span class="text">Freind</span>
             </a>

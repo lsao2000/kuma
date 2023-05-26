@@ -1,4 +1,4 @@
-<footer class="mt-5 bg-light" >
+<footer class="mt-5 bg-light" id="footer">
     <!-- <div id="kumaLogo"></div> -->
     <div id="head" class="d-flex">
         <div>

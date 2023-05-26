@@ -8,23 +8,21 @@ function validInput($name){
     return $valid3;
 }
  
-// This function for make the border of input red if the given data is incorrect
 function styling($id){
     echo "<style>#$id{border: 1px solid red;}</style>";
 }
 
-// Remove the styling if the condition is correct
+
 function removeStyling($id){
     echo "<style>#$id{border:none;}</style>";
 }
 
-// This function for display the variiable if it is valid
+// This function for display the variable if it is valid
 function displayInInput($variable,$idInput,$validInput){
     if ($validInput === "valid"){
         echo "<script>$idInput.value = '$variable' </script>";
     }else if($validInput === ""){
         echo "<script>$idInput.value = '' </script>";
-        
     }
 }
 
@@ -48,4 +46,15 @@ function selectByidDatabase($conx,$column,$id,$table){
     $line = $preparing->fetch();
     return $line["$column"];
 }
+function selectfreindInTable($conx,$column,$id,$table){
+    $list_freind = [];
+    $preparing = $conx->prepare("SELECT $column FROM $table WHERE user_id = ?");
+    $preparing->execute(array($id));
+    while($line = $preparing->fetch()){
+        array_push($list_freind,$line[$column]);
+    }
+    return $list_freind;
+}
+
+
 ?>
