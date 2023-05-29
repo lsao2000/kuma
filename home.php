@@ -42,6 +42,7 @@ if (!isset($_SESSION['username'])){
                 </div>
                 <div id="post">
                     <?php
+                    $user_id = selectDatabase($conx,'id',$_SESSION['username'],'users');
                     $preparing = $conx->prepare("SELECT * FROM postuser");
                     $preparing->execute();
                     while($line = $preparing->fetch()){
@@ -60,7 +61,9 @@ if (!isset($_SESSION['username'])){
                         <img src=<?="./imgdb/$name/post/$line[name_img]"?> id="imgPost" alt="">
                         <hr>
                         <div class="footerbtn p-1">
-                            <button ><img src="./imageAnimation/heartnoclick.png" class="like"  alt=""></button>
+                            <input type="text" name="" class="POST_ID" value="<?=$line['id']?>" id="">
+                            <input type="text" name="" class="USER_ID" value="<?=$user_id?>" id="">
+                            <button class="btnLike"><img src=<?=imgBtnLike($conx,$line['id'],$user_id)?> class="like"  alt=""></button>
                             <form action="DRPC.php" method="post">
                                 <input type="text" name="PostId" id="postId" value="<?= $line['id']?>">
                                 <input type="submit" value="" id="comment">
@@ -122,6 +125,7 @@ if (!isset($_SESSION['username'])){
                         try{
                             $isFreind = selectfreindInTable($conx,'freind_id',$id,'freind');
                             echo "<p id='checkIsFreind'>freind</p>";
+                            
                         }catch(PDOException){
                             echo "<p id='checkIsFreind'></p>";
                         }
@@ -150,9 +154,9 @@ if (!isset($_SESSION['username'])){
                                 </div>
                                 <div class="card-body" id="chatBody">
                                     
-                                </div>
-                                <div class="card-footer" id="footerChat">
-                                    <form  id="Sendmessage">
+                                    </div>
+                                    <div class="card-footer" id="footerChat">
+                                        <form  id="Sendmessage">
                                             <input type="text" name="freindid" value="<?=$line['freind_id']?>" id="freindid">
                                             <input type="text" name="senderId" id="senderId" value="<?=$id?>">
                                             <input type="text" name="sendername" id="sendername" value="<?=$username?>">
@@ -160,10 +164,10 @@ if (!isset($_SESSION['username'])){
                                                 <input type="text" class="form-control" name="textMessage" id="textmessage">
                                                 <input type="submit" id="submitMessage" value="">
                                             </div>
-                                    </form>
+                                        </form>
+                                    </div>
                                 </div>
-                            </div>
-                    <?php }?>
+                                <?php }?>
                 </div>
             </div>
             <div class="col-3"></div>

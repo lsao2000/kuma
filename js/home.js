@@ -10,13 +10,16 @@ const CHATFREIND = document.querySelectorAll(".chatFreind")
 const SendMessage = document.getElementById("Sendmessage")
 const chatBody = document.getElementById("chatBody")
 const checkIsFreind = document.getElementById("checkIsFreind")
+const btnLike = document.querySelectorAll(".btnLike")
+const POST_ID = document.querySelectorAll(".POST_ID")
+const USER_ID = document.querySelectorAll(".USER_ID")
 let AreFreind = false
 
 function animation (){
     window.requestAnimationFrame(animation)
     if(AreFreind){
         Getmessage()
-    }
+    } 
     homeMessage.addEventListener("click",function(){
         PostUser.style.display = "none"
         freindUser.style.display = "none"
@@ -48,12 +51,11 @@ function animation (){
         homeFreind.style.height = "32px"
     })
 }
-function Sendmessage(e){
-    
+function Sendmessage(e){ 
     e.preventDefault()
     const xhr = new XMLHttpRequest();
     xhr.open("POST","SFM.php",true)
-    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded")
     const freindId = document.getElementById("freindid").value
     const senderId = document.getElementById("senderId").value
     let textmessage = document.getElementById("textmessage").value
@@ -63,6 +65,7 @@ function Sendmessage(e){
         if (this.status === 200){
             document.getElementById("textmessage").value = ""
             chatBody.scrollTop = chatBody.scrollHeight
+            console.log(this.responseText)
         }
     }
     xhr.send(params)
@@ -76,19 +79,32 @@ function Getmessage(){
     xhr.onload = function(){
         if (this.status === 200){
             chatBody.innerHTML = this.responseText
+            // console.log(this.responseText)
         }
     }
     xhr.send()
 }
-for (const click of like){
-    let countLike = 0
-    click.onclick = () => {
-        if (countLike %2 == 0){
-            click.src = "./imageAnimation/heartclick.png"
-        }else{
-            click.src = "./imageAnimation/heartnoclick.png"
+function likePost(postid,userid,click){
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST','LRPU.php',true)
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+    const paramsLike = `POST_ID=${postid}&USER_ID=${userid}`
+    xhr.onload = function(){
+        if (this.status === 200){
+            if (this.responseText === "we add the row"){
+                like[click].src = "./imageAnimation/heartclick.png"
+            }else if (this.responseText === "now we delete row"){
+                like[click].src = "./imageAnimation/heartnoclick.png"
+            }
         }
-        countLike += 1 
+    }
+    xhr.send(paramsLike)
+}
+
+
+for (const click in btnLike){
+    btnLike[click].onclick = () =>{
+          likePost(POST_ID[click].value,USER_ID[click].value,click)
     }
 }
 for (const freind in FREINDS ){
@@ -100,10 +116,13 @@ for (const freind in FREINDS ){
         chatBody.scrollTop = chatBody.scrollHeight
     }
 }
+
+// displayLikePost(POST_ID,USER_ID)
 animation() // i made this just for display the changing automaticlly
+
 if (checkIsFreind.textContent == "freind"){
-    AreFreind = true
     SendMessage.addEventListener("submit",Sendmessage)
+    AreFreind = true
 }else{
 
 }

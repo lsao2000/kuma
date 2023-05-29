@@ -55,6 +55,21 @@ function selectfreindInTable($conx,$column,$id,$table){
     }
     return $list_freind;
 }
+function imgBtnLike($conx,$postId,$userId){
+    try{
+        $preparing = $conx->prepare('SELECT love FROM likepost WHERE post_id = ? AND user_id = ?');
+        $preparing->execute(array($postId,$userId));
+        $line = $preparing->fetch();
+        if($line){
+            return "./imageAnimation/heartclick.png";
+        }
+        else{
+            return "./imageAnimation/heartnoclick.png";
+        }
+    }catch(PDOException){
+        return "./imageAnimation/heartnoclick.png";
+    }
+}
 
 
 ?>

@@ -9,3 +9,9 @@ the meaning of this file name SFM.php
 ## SFM : send freind message
 the meaning of this file name GFM.php
 ## GFM : get freind message
+the meaning of this file name LRPU.php
+## LRPU : like random post user
+the meaning of this file name RLP.php
+## RLP : remove like post
+the meaning of this file name GLP.php
+## RLP : get like post

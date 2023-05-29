@@ -269,6 +269,6 @@
     margin-top: 5px;
     margin-bottom: 9px;
 }
-#checkIsFreind{
+#checkIsFreind,.POST_ID,.USER_ID{
     display: none;
 }
